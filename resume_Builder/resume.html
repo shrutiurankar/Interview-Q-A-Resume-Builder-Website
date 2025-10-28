@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   <meta charset="UTF-8">
+   <meta http-equiv="X-UA-Compatible" content="IE=edge">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>Resume Builder</title>
+
+   <!-- Font Awesome -->
+   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.2/css/all.min.css">
+
+   <!-- Custom CSS -->
+  <link rel="stylesheet" href="../css/style.css">
+
+
+   <!-- jsPDF -->
+   <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+</head>
+<body>
+
+    <header class="header">
+   
+   <section class="flex">
+
+      <a href="home.html" class="logo">Learning platform</a>
+
+      <form action="search.html" method="post" class="search-form">
+         <input type="text" name="search_box" required placeholder="search courses..." maxlength="100">
+         <button type="submit" class="fas fa-search"></button>
+      </form>
+
+      <div class="icons">
+         <div id="menu-btn" class="fas fa-bars"></div>
+         <div id="search-btn" class="fas fa-search"></div>
+         <div id="user-btn" class="fas fa-user"></div>
+         <div id="toggle-btn" class="fas fa-sun"></div>
+      </div>
+
+      <div class="profile">
+         <img src="images/s&n_logo.png" class="image" alt="">
+         <h3 class="name">Learning platform</h3>
+         <p class="role"></p>
+         <a href="profile.html" class="btn">view profile</a>
+         <div class="flex-btn">
+            <a href="login.html" class="option-btn">login</a>
+            <a href="register.html" class="option-btn">register</a>
+         </div>
+      </div>
+
+   </section>
+
+</header>   
+
+<div class="side-bar">
+
+   <div id="close-btn">
+      <i class="fas fa-times"></i>
+   </div>
+
+   <div class="profile">
+      <img src="images/s&n_logo.png" class="image" alt="">
+      <h3 class="name">Learning platform</h3>
+      <p class="role"></p>
+      <a href="profile.html" class="btn">view profile</a>
+   </div>
+
+   <nav class="navbar">
+      <a href="../home.html"><i class="fas fa-home"></i><span>home</span></a>
+      <a href="../about.html"><i class="fas fa-question"></i><span>about</span></a>
+      <a href="../courses.html"><i class="fas fa-graduation-cap"></i><span>courses</span></a>
+      <a href="resume_Builder/resume.html"><i class="fas fa-file-alt"></i><span>Resume Builder</span></a>
+      <a href="../HR_Interview_Q_A.html" class="active"><i class="fas fa-comments"></i><span>HR Interview Q & A</span></a>
+      <a href="../CS_IT_ECS_Interview_Q_A.html"><i class="fas fa-graduation-cap"></i><span>CS/IT/ECS Interview for Fresher</span></a>
+      <a href="../Electronic_Q&A.html"><i class="fas fa-video"></i><span>Electronic_Q&A</span></a>
+      <a href="../Electrical_Q&A.html"><i class="fas fa-broadcast-tower"></i><span>Electrical_Q&A</span></a>
+      <a href="../Mechanical_Q&A.html"><i class="fas fa-broadcast-tower"></i><span>Mechanical_Q&A</span></a>
+      <a href="../Civil_Q&A.html"><i class="fas fa-broadcast-tower"></i><span>Civil_Q&A</span></a>
+      <a href="../teachers.html"><i class="fas fa-chalkboard-user"></i><span>teachers</span></a>
+      <a href="../contact.html"><i class="fas fa-headset"></i><span>contact us</span></a>
+   </nav>
+
+</div>
+
+<section class="resume_Builder">
+
+   <h1 class="heading">Resume Builder</h1>
+
+   <form id="resume-form" class="form-container">
+      
+      <h3 class="form-title">Personal Info</h3>
+      <div class="form-group">
+         <input type="text" id="name" placeholder="Full Name" required>
+      </div>
+      <div class="form-group">
+         <input type="text" id="location" placeholder="Location" required>
+      </div>
+      <div class="form-group">
+         <input type="text" id="phone" placeholder="Phone" required>
+      </div>
+      <div class="form-group">
+         <input type="email" id="email" placeholder="Email" required>
+      </div>
+      <div class="form-group">
+         <input type="text" id="linkedin" placeholder="LinkedIn URL">
+      </div>
+
+      <h3 class="form-title">Objective</h3>
+      <textarea id="objective" placeholder="Write your career objective..." required></textarea>
+
+      <h3 class="form-title">Education</h3>
+      <textarea id="education" placeholder="e.g. B.Tech in CS, XYZ University, 2021–2025" required></textarea>
+
+      <h3 class="form-title">Skills</h3>
+      <textarea id="skills" placeholder="e.g. Python, HTML, CSS, SQL" required></textarea>
+
+      <h3 class="form-title">Experience</h3>
+      <textarea id="experience" placeholder="e.g. Intern at ABC, June–Aug 2023"></textarea>
+
+      <h3 class="form-title">Projects</h3>
+      <textarea id="projects" placeholder="e.g. Online Learning Platform - React + Node.js"></textarea>
+
+      <h3 class="form-title">Certifications</h3>
+      <textarea id="certifications" placeholder="e.g. Python for Data Science - March 2023"></textarea>
+
+      <h3 class="form-title">Declaration</h3>
+      <textarea id="declaration" placeholder="I solemnly declare that all the above information is correct..."></textarea>
+
+      <button type="submit" class="btn">Generate Resume</button>
+   </form>
+
+   <div id="resume-output" style="display:none;">
+      <div id="resume-preview" class="resume-template"></div>
+      <button id="download-pdf" class="btn">Download PDF</button>
+   </div>
+
+</section>
+
+
+<footer class="footer">
+
+   &copy; copyright @ 2024 by <span>Learning platform</span> | all rights reserved!
+
+</footer> 
+
+<!-- Custom JS -->
+<script src="resume.js" defer></script>
+
+</body>
+</html>
